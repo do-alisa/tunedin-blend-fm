@@ -1,42 +1,155 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.app {
+  width: 100%;
+  max-width: 720px;
+  padding: 2.5rem;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header h1 {
+  display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Bouncing music note as the "d" of Blend – raised */
+.header h1 .note-d {
+  display: inline-block;
+  transform: translateY(-9px);
+  animation: bounce-note 2s ease-in-out infinite;
 }
 
-.card {
-  padding: 2em;
+@keyframes bounce-note {
+  0%, 100% { transform: translateY(-9px); }
+  50% { transform: translateY(-14px); }
 }
 
-.read-the-docs {
-  color: #888;
+.form-card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-row input {
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.error-msg {
+  color: #b91c1c;
+  background: #fef2f2;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.blend-section {
+  margin-top: 2rem;
+}
+
+.blend-title {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.track-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 520px;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.track-row:hover {
+  transform: translateX(4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.track-info {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.track-title {
+  font-weight: 700;
+  color: var(--purple-800);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.track-artist {
+  color: var(--purple-600);
+  font-size: 0.9rem;
+  margin: 0.15rem 0 0 0;
+  opacity: 0.95;
+}
+
+.track-badge {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  background: var(--pastel-lavender);
+  color: var(--purple-700);
+}
+
+.track-badge.shared {
+  background: var(--pastel-plum);
+  color: var(--purple-800);
+}
+
+.debug-panel {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--pastel-lavender);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: var(--purple-700);
+  opacity: 0.9;
+}
+
+.debug-panel strong {
+  color: var(--purple-800);
 }
